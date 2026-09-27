@@ -6,11 +6,8 @@ workflows:
       flutter: stable
       java: 17
     scripts:
-      - name: Create Android platform
-        script: |
-          flutter create --platforms=android --org com.nopen --project-name nopen .
-          cp native/MainActivity.kt android/app/src/main/kotlin/com/nopen/nopen/MainActivity.kt
-          cp native/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
+      - name: Flutter doctor
+        script: flutter doctor -v
       - name: Install dependencies
         script: flutter pub get
       - name: Static analysis
